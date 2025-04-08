@@ -1,5 +1,6 @@
 package com.example.lanciodadi5binf
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.lanciodaditrinari.R
+import com.example.lanciodaditrinari.SecondActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,4 +27,13 @@ class MainActivity : AppCompatActivity() {
         })
         var textViewTitle = findViewById<TextView>(R.id.textViewTitle)
         var imageViewDado = findViewById<ImageView>(R.id.imageViewDado)
-    } }
+    }
+    private fun estraiNumero(): Int{
+        return (1..6).random()
+    }
+    private fun lanciaIntent(mioRandom: Int){
+        var mioIntent = Intent(this, SecondActivity::class.java)
+        mioIntent.putExtra("NUMERO", mioRandom)
+        startActivity(mioIntent)
+    }
+}
