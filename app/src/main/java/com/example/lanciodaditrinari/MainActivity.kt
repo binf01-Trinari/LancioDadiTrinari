@@ -23,18 +23,12 @@ class MainActivity : AppCompatActivity() {
         buttonLancia.setOnClickListener(View.OnClickListener {
             val mioToast = Toast.makeText(this, "Dado lanciato!", Toast.LENGTH_LONG)
             mioToast.show()
-            val mioRandom = estraiNumero()
-            lanciaIntent(mioRandom)
+            secondoIntent()
         })
     }
 
-    private fun estraiNumero(): Int{
-        return (1..6).random()
-    }
-
-    private fun lanciaIntent(mioRandom: Int){
-        val mioIntent = Intent(this, TerzoActivity::class.java)
-        mioIntent.putExtra("NUMERO", mioRandom)
+    private fun secondoIntent(){
+        val mioIntent = Intent(this, SecondoActivity::class.java)
         startActivity(mioIntent)
     }
 }

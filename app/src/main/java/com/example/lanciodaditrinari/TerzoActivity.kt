@@ -12,6 +12,7 @@ class TerzoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_terzo)
 
         val mioRandom = intent.getIntExtra("NUMERO", -1)
+        val numeroScelto = intent.getIntExtra("NUMEROINPUT", -1)
         val dadoRandom = findViewById<ImageView>(R.id.dadoRandom)
 
         val arrayDadi = when(mioRandom){
